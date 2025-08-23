@@ -1,10 +1,19 @@
 const express = require('express');
-const fs = require('fs').promises; // versão com 'promises' para código mais limpo
+const fs = require('fs').promises;
 const path = require('path');
+const https = require("https");
+
+const options = {
+  key: fs.readFileSync(path.join(__dirname, '../certificado/chave_privada.key')), 
+  cert: fs.readFileSync(path.join(__dirname, '../certificado/certificado.crt')),
+  ca: fs.readFileSync(path.join(__dirname, '../certificado/CA.crt'))
+};
 
 const app = express();
-const PORT = 3000;
+const PORT = 21035;
 const ARQUIVO_JSON = path.join(__dirname, 'confirmacoes.json');
+
+app.use(express.urlencoded({ extended: true }));
 
 // --- Middlewares ---
 // servidor entender JSON vindo no corpo da requisição
@@ -72,6 +81,6 @@ app.get('/lista-confirmacao', async (req, res) => {
     }
 });
 
-app.listen(PORT, () => {
-    console.log(`Servidor rodando em http://localhost:${PORT}`);
+https.createServer(options, app).listen(PORT, () => {
+  console.log(`Servidor HTTPS rodando na porta ${PORT}`);
 });
