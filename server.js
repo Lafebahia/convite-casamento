@@ -1,6 +1,6 @@
 const express = require('express');
 const fs = require('fs');
-const fs = require('fs').promises;
+const fsp = require('fs').promises;
 const path = require('path');
 const https = require("https");
 
@@ -31,7 +31,7 @@ app.post('/salvar-confirmacao', async (req, res) => {
     try {
         let confirmacoes = [];
         try {
-            const dadosAtuais = await fs.readFile(ARQUIVO_JSON, 'utf8');
+            const dadosAtuais = await fsp.readFile(ARQUIVO_JSON, 'utf8');
             confirmacoes = JSON.parse(dadosAtuais);
         } catch (error) {
             if (error.code !== 'ENOENT') throw error;
@@ -39,7 +39,7 @@ app.post('/salvar-confirmacao', async (req, res) => {
 
         confirmacoes.push(novaConfirmacao);
 
-        await fs.writeFile(ARQUIVO_JSON, JSON.stringify(confirmacoes, null, 2));
+        await fsp.writeFile(ARQUIVO_JSON, JSON.stringify(confirmacoes, null, 2));
 
         res.status(200).json({ message: 'Confirmação salva com sucesso!' });
 
@@ -51,7 +51,7 @@ app.post('/salvar-confirmacao', async (req, res) => {
 
 app.get('/lista-confirmacao', async (req, res) => {
     try {
-        const dadosConfirmacoesJson = await fs.readFile(ARQUIVO_JSON, 'utf8');
+        const dadosConfirmacoesJson = await fsp.readFile(ARQUIVO_JSON, 'utf8');
         const confirmacoes = JSON.parse(dadosConfirmacoesJson); 
 
         let totalConfirmados = 0;
