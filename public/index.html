@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Casamento | Alef & Vivi</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="icon" type="image/x-icon" href="images/convite.ico">
+</head>
+<body>
+
+    <header id="principal">
+        <div class="overlay"></div>
+        <div class="header-content">
+            <h1>Álef & Viviane</h1>
+            <p>Convidam para a celebração do nosso amor</p>
+            <p class="date">07 de Novembro de 2025 | Sexta-Feira às 15:00 horas</p>
+        </div>
+        <nav class="main-nav">
+            <ul>
+                <li><a href="#cerimonia"><i class="fa-solid fa-church"></i><span>Cerimônia</span></a></li>
+                <li><a href="#recepcao"><i class="fa-solid fa-champagne-glasses"></i><span>Recepção</span></a></li>
+                <li><a href="#presenca"><i class="fa-solid fa-check-to-slot"></i><span>Presença</span></a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="cerimonia" class="content-section">
+            <div class="container">
+                <h2>Cerimônia</h2>
+                <div class="icon-divider">
+                    <i class="fa-solid fa-church"></i>
+                </div>
+                <p>A cerimônia será no dia 07 de novembro de 2025 às 15:00</p>
+                <p>Local: Av. Beira Mar, 419 - 1º andar - Ribeira, Espaço Aliança Salvador</p>
+                <p>A cerimônia <b>começará</b> pontualmente às 16:00</p>
+                <div class="map-container">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3888.902410036781!2d-38.50048122466053!3d-12.9139934873961!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x7160fef2bc1a71f%3A0xa2aa20a5a05d117f!2sAv.%20Beira%20Mar%2C%20419%20-%20Ribeira%2C%20Salvador%20-%20BA%2C%2040415-055!5e0!3m2!1spt-BR!2sbr!4v1751320977621!5m2!1spt-BR!2sbr" 
+                    width="300" height="350" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+                <button type="button" class="btn" onclick="solicitarUber()"><i class="fa-brands fa-uber"></i> Solicitar Uber</button>
+            </div>
+        </section>
+
+        <section id="recepcao" class="content-section gray-bg">
+            <div class="container">
+                <h2>Recepção</h2>
+                <div class="icon-divider">
+                    <i class="fa-solid fa-champagne-glasses"></i>
+                </div>
+                <p>Convidamos você para celebrar conosco do começo ao fim! A cerimônia e a festa acontecerão no Espaço Aliança Salvador pontualmente as 16:00</p>
+                <br>
+                <p><i>A recepção acontece imediatamente após a cerimônia</i></p>
+                <p><i>Dress Code: Traje social</i></p><br>
+                <h4>Mãe da Noiva de Oliva & Mãe do Noivo</h4>
+                <div class="paleta-container">
+                    <div class="circulo cor4" title="Verde Oliva"></div>
+                    <div class="circulo cor6" title="Azul Royal"></div>
+                </div>
+                <h4>Madrinhas de Terracota</h4>
+                <div class="paleta-container">
+                    <div class="circulo cor1" title="Terracota"></div>
+                    <div class="circulo cor2" title="Terracota"></div>
+                    <div class="circulo cor3" title="Terracota"></div>
+                </div>
+                <h4>Padrinhos de Bege</h4>
+                <div class="paleta-container">
+                    <div class="circulo cor9" title="Bege"></div>
+                    <div class="circulo cor7" title="Bege"></div>
+                    <div class="circulo cor8" title="Bege"></div>
+                </div>
+                <h4>Amigas da Noiva de Champagne</h4>
+                <div class="paleta-container">
+                    <div class="circulo cor5" title="Champagne"></div>
+                </div>
+            </div>
+        </section>
+
+        <section id="presenca" class="content-section">
+            <div class="container">
+                <h2>Confirme sua Presença</h2>
+                <div class="icon-divider">
+                    <i class="fa-solid fa-check-to-slot"></i>
+                </div>
+                <p>Sua presença é o nosso maior presente!<br>Por favor, confirme até o dia 27 de Setembro de 2025</p>
+                
+                <form id="rsvp-form">
+                    <div class="form-group">
+                        <label for="nome">Seu nome completo:</label>
+                        <input type="text" id="nome" name="nome" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Você irá comparecer?</label>
+                        <div class="radio-group">
+                            <input type="radio" id="sim" name="confirmacao" value="sim" required>
+                            <label for="sim">Sim, estarei lá!</label>
+                        </div>
+                        <div class="radio-group">
+                            <input type="radio" id="nao" name="confirmacao" value="nao">
+                            <label for="nao">Não poderei comparecer :(</label>
+                        </div>
+                    </div>
+                    <button type="submit" class="btn"><i class="fa-solid fa-square-check"></i> Enviar Confirmação</button>
+                </form>
+                <div id="form-message" class="hidden"></div>
+            </div>
+        </section>
+    </main>
+    
+    <footer>
+        <p>Feito com ❤️ por <a href="https://www.linkedin.com/in/vitor-santos-01/" target="_blank" style="color: white;">Vitor Santos</a></p>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>

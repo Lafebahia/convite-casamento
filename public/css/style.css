@@ -1,0 +1,361 @@
+/* ==================== CONFIGURAÇÕES GERAIS ==================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    color: #4a4a4a;
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.container p {
+    font-size: 1.2rem;
+}
+
+h2 {
+    font-family: 'Great Vibes', cursive;
+    font-size: 3.5rem;
+    color: #2c3e50;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+h4 {
+    font-family: 'Great Vibes', cursive;
+    font-size: 1.8rem;
+    color: #2c3e50;
+    text-align: center;
+}
+
+hr {
+    margin: 10px;
+}
+
+.content-section {
+    padding: 80px 0;
+    text-align: center;
+}
+
+.gray-bg {
+    background-color: #f8f9fa;
+}
+
+.icon-divider {
+    font-size: 1.5rem;
+    color: #3498db;
+    margin-bottom: 30px;
+}
+
+/* ==================== SEÇÃO PRINCIPAL (HEADER) ==================== */
+#principal {
+    height: 100vh;
+    background-image: url("/images/i2.jpg");
+    background-size: cover;
+    background-position: center;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    position: relative;
+}
+
+#principal::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0); /* << Altere a opacidade aqui */
+}
+
+#principal .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+#principal .header-content {
+    position: relative;
+    z-index: 2;
+}
+
+#principal h1 {
+    font-family: 'Great Vibes', cursive;
+    font-size: 6rem;
+    font-weight: normal;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    margin: 0;
+}
+
+#principal p {
+    font-size: 1.2rem;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+#principal .date {
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+/* Menu de Navegação */
+.main-nav {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(5px);
+    padding: 15px 0;
+    z-index: 2;
+}
+
+.main-nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+}
+
+.main-nav a {
+    color: white;
+    text-decoration: none;
+    font-size: 1rem;
+    text-transform: uppercase;
+    font-weight: bold;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    transition: transform 0.3s ease;
+}
+
+.main-nav a:hover {
+    transform: translateY(-5px);
+}
+
+.main-nav i {
+    font-size: 1.8rem;
+}
+
+/* ==================== MAPA ==================== */
+.map-container {
+    margin-top: 40px;
+    margin-bottom: 20px;
+    position: relative;
+    padding-bottom: 56.25%; /* Proporção 16:9 */
+    height: 0;
+    overflow: hidden;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.map-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+/* ==================== FORMULÁRIO DE PRESENÇA ==================== */
+#rsvp-form {
+    max-width: 500px;
+    margin: 40px auto 0;
+    text-align: left;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+}
+
+.form-group input[type="text"] {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1rem;
+}
+
+.radio-group {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.radio-group input[type="radio"] {
+    margin-right: 10px;
+}
+
+.btn {
+    display: inline-block;
+    background-color: #3498db;
+    color: white;
+    padding: 12px 30px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+    width: 100%;
+}
+
+.btn:hover {
+    background-color: #2980b9;
+}
+
+#form-message {
+    margin-top: 20px;
+    padding: 15px;
+    border-radius: 5px;
+    text-align: center;
+}
+
+#form-message.success {
+    background-color: #e8f5e9;
+    color: #2e7d32;
+}
+
+#form-message.error {
+    background-color: #fbe9e7;
+    color: #c62828;
+}
+
+.hidden {
+    display: none;
+}
+
+/* ==================== FOOTER ==================== */
+footer {
+    background-color: #2c3e50;
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+}
+
+/* ==================== RESPONSIVIDADE ==================== */
+@media (max-width: 768px) {
+    #principal h1 {
+        font-size: 4rem;
+    }
+
+    #principal p {
+        font-size: 1rem;
+    }
+
+    h2 {
+        font-size: 2.8rem;
+    }
+
+    .main-nav ul {
+        gap: 20px;
+    }
+
+    .main-nav a span {
+        font-size: 0.8rem;
+    }
+
+    .main-nav i {
+        font-size: 1.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    #principal h1 {
+        font-size: 3rem;
+    }
+
+    /* Ocultar o texto do menu em telas muito pequenas, deixando só os ícones */
+    .main-nav a span {
+        display: none;
+    }
+    
+    .main-nav ul {
+        gap: 30px;
+    }
+
+    .main-nav a {
+        padding: 10px;
+    }
+}
+
+.paleta-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+.circulo {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  transition: transform 0.3s ease-in-out;
+  margin-bottom: 20px;
+}
+
+.circulo:hover {
+  transform: scale(1.1); /* Efeito de zoom ao passar o mouse */
+  cursor: pointer;
+}
+
+/* Cores da paleta */
+.cor1 {
+  background-color: #6f2620; /* Azul Meia-Noite */
+}
+
+.cor2 {
+  background-color: #903d35; /* Coral */
+}
+
+.cor3 {
+  background-color: #a5583e; /* Verde Turquesa */
+}
+
+.cor4 {
+    background-color: #676647;
+}
+
+.cor5 {
+    background-color: #ecd9b4;
+}
+
+.cor6 {
+    background-color: #2B48B4;
+}
+
+.cor7 {
+    background-color: #EADCC1;
+}
+
+.cor8 {
+    background-color: #EDE8D0;
+}
+
+.cor9 {
+    background-color: #E2CAB2;
+}
