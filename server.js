@@ -85,6 +85,12 @@ app.get('/lista-confirmacao', async (req, res) => {
     }
 });
 
+// server
 https.createServer(options, app).listen(PORT, () => {
   console.log(`Servidor HTTPS rodando na porta ${PORT}`);
 });
+
+// localhost
+// app.listen(PORT, () => {
+//   console.log(`Servidor rodando na porta ${PORT}`);
+// });
