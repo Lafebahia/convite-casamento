@@ -20,6 +20,10 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json()); 
 app.use(express.static(path.join(__dirname, 'public')));
 
+app.get("/", (req, res) => {
+    res.sendFile(__dirname + "/public/index.html");
+});
+
 app.post('/salvar-confirmacao', async (req, res) => {
     const novaConfirmacao = req.body;
     console.log('Recebida nova confirmação:', novaConfirmacao);
