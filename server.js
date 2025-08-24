@@ -5,9 +5,8 @@ const path = require('path');
 const https = require("https");
 
 const options = {
-  key: fs.readFileSync(path.join(__dirname, '../certificado/chave_privada.key')), 
-  cert: fs.readFileSync(path.join(__dirname, '../certificado/certificado.crt')),
-  ca: fs.readFileSync(path.join(__dirname, '../certificado/CA.crt'))
+  key: fs.readFileSync(path.join(__dirname, '../certificado/cert.pem')), 
+  cert: fs.readFileSync(path.join(__dirname, '../certificado/cert.pem'))
 };
 
 const app = express();
